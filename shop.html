@@ -7,162 +7,185 @@
 <link rel="stylesheet" href="shop-style.css">
 <style>
 * {
-margin: 0;
-padding: 0;
-box-sizing: border-box;
-font-family: Arial, sans-serif;
-scroll-behavior: smooth;
-color: #000;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+    scroll-behavior: smooth;
+    color: #000;
 }
 body {
-background-color: #fff;
+    background-color: #fff;
 }
 header {
-position: fixed;
-width: 100%;
-top: 0;
-left: 0;
-background: #fff;
-box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-padding: 15px 20px;
-display: flex;
-justify-content: space-between;
-align-items: center;
-z-index: 1000;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
 }
 header h1 {
-font-size: 36px;
-font-weight: bold;
+    font-size: 36px;
+    font-weight: bold;
 }
 nav a {
-margin: 0 15px;
-text-decoration: none;
-color: #000;
-font-weight: bold;
+    margin: 0 15px;
+    text-decoration: none;
+    color: #000;
+    font-weight: bold;
 }
 .shop-container {
-padding: 100px 20px 20px;
-text-align: center;
+    padding: 100px 20px 20px;
+    text-align: center;
 }
 .products {
-display: grid;
-grid-template-columns: repeat(3, 1fr);
-gap: 20px;
-justify-content: center;
-margin-top: 30px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    justify-content: center;
+    margin-top: 30px;
 }
 .product {
-text-align: center;
-padding: 10px;
-border: 2px solid #ddd;
-border-radius: 8px;
-box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-background-color: #fff;
-opacity: 0;
-transform: translateY(100px);
-transition: opacity 1s ease, transform 1s ease;
+    text-align: center;
+    padding: 10px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    opacity: 0;
+    transform: translateY(100px);
+    transition: opacity 1s ease, transform 1s ease;
 }
 .product.visible {
-opacity: 1;
-transform: translateY(0);
+    opacity: 1;
+    transform: translateY(0);
 }
 .fade-in {
-opacity: 0;
-transform: translateY(100px);
-transition: opacity 1s ease, transform 1s ease;
+    opacity: 0;
+    transform: translateY(100px);
+    transition: opacity 1s ease, transform 1s ease;
 }
 .fade-in.visible {
-opacity: 1;
-transform: translateY(0);
+    opacity: 1;
+    transform: translateY(0);
 }
 .add-to-cart {
-margin-top: 10px;
-padding: 10px 15px;
-border: none;
-border-radius: 5px;
-background-color: #000;
-color: #fff;
-cursor: pointer;
-font-weight: bold;
-transition: background 0.3s;
+    margin-top: 10px;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    background-color: #000;
+    color: #fff;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background 0.3s;
 }
 .add-to-cart:hover {
-background-color: #444;
+    background-color: #444;
 }
 footer {
-text-align: center;
-padding: 20px;
-background: #f2f2f2;
-margin-top: 30px;
+    text-align: center;
+    padding: 20px;
+    background: #f2f2f2;
+    margin-top: 30px;
 }
 </style>
 </head>
 <body>
 <header>
-<h1>The Chosen Fit</h1>
-<nav>
-<a href="index.html">Home</a>
-<a href="shop.html">Shop</a>
-<a href="index.html#about">About</a>
-<a href="index.html#contact">Contact</a>
-</nav>
+    <h1>The Chosen Fit</h1>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="shop.html">Shop</a>
+        <a href="index.html#about">About</a>
+        <a href="index.html#contact">Contact</a>
+        <a href="checkout.html" class="checkout-button">Checkout</a>
+    </nav>
 </header>
 <div class="shop-container">
-<h2 class="fade-in">Shop Our Full Collection</h2>
-<div class="products">
-<div class="product fade-in">
-<img src="https://m.media-amazon.com/images/I/61YmPgzalIL._AC_SX569_.jpg" alt="Product">
-<h3>Trust in the Lord</h3>
-<p>$14.99</p>
-<button class="add-to-cart">Add to Cart</button>
-</div>
-<div class="product fade-in">
-<img src="https://m.media-amazon.com/images/I/B1v3V00ALJL._CLa%7C2140%2C2000%7CB19lzZbCQxL.png%7C0%2C0%2C2140%2C2000%2B0.0%2C0.0%2C2140.0%2C2000.0_AC_SX466_.png" alt="Product">
-<h3>Child of God</h3>
-<p>$14.99</p>
-<button class="add-to-cart">Add to Cart</button>
-</div>
-<div class="product fade-in">
-<img src="https://m.media-amazon.com/images/I/61ZWCHIgI5L._AC_SX569_.jpg" alt="Product">
-<h3>Faith Over Fear</h3>
-<p>$14.99</p>
-<button class="add-to-cart">Add to Cart</button>
-</div>
-<div class="product fade-in">
-<img src="https://m.media-amazon.com/images/I/61Akec598SL._AC_SX569_.jpg" alt="Product">
-<h3>Book of Psalms</h3>
-<p>$14.99</p>
-<button class="add-to-cart">Add to Cart</button>
-</div>
-<div class="product fade-in">
-<img src="https://m.media-amazon.com/images/I/61og6oEk-qL._AC_SX569_.jpg" alt="Product">
-<h3>Jesus Loves You</h3>
-<p>$14.99</p>
-<button class="add-to-cart">Add to Cart</button>
-</div>
-<div class="product fade-in">
-<img src="https://m.media-amazon.com/images/I/5147T7qgfnL._AC_SX466_.jpg" alt="Product">
-<h3>Faith</h3>
-<p>$14.99</p>
-<button class="add-to-cart">Add to Cart</button>
-</div>
-</div>
+    <h2 class="fade-in">Shop Our Full Collection</h2>
+    <div class="products">
+        <div class="product fade-in">
+            <img src="https://m.media-amazon.com/images/I/61YmPgzalIL._AC_SX569_.jpg" alt="Product">
+            <h3>Trust in the Lord</h3>
+            <p>$14.99</p>
+            <button class="add-to-cart" data-name="Trust in the Lord" data-price="14.99">Add to Cart</button>
+        </div>
+        <div class="product fade-in">
+            <img src="https://m.media-amazon.com/images/I/B1v3V00ALJL._CLa%7C2140%2C2000%7CB19lzZbCQxL.png%7C0%2C0%2C2140%2C2000%2B0.0%2C0.0%2C2140.0%2C2000.0_AC_SX466_.png" alt="Product">
+            <h3>Child of God</h3>
+            <p>$14.99</p>
+            <button class="add-to-cart" data-name="Child of God" data-price="14.99">Add to Cart</button>
+        </div>
+        <div class="product fade-in">
+            <img src="https://m.media-amazon.com/images/I/61ZWCHIgI5L._AC_SX569_.jpg" alt="Product">
+            <h3>Faith Over Fear</h3>
+            <p>$14.99</p>
+            <button class="add-to-cart" data-name="Faith Over Fear" data-price="14.99">Add to Cart</button>
+        </div>
+        <div class="product fade-in">
+            <img src="https://m.media-amazon.com/images/I/61Akec598SL._AC_SX569_.jpg" alt="Product">
+            <h3>Book of Psalms</h3>
+            <p>$14.99</p>
+            <button class="add-to-cart" data-name="Book of Psalms" data-price="14.99">Add to Cart</button>
+        </div>
+        <div class="product fade-in">
+            <img src="https://m.media-amazon.com/images/I/61og6oEk-qL._AC_SX569_.jpg" alt="Product">
+            <h3>Jesus Loves You</h3>
+            <p>$14.99</p>
+            <button class="add-to-cart" data-name="Jesus Loves You" data-price="14.99">Add to Cart</button>
+        </div>
+        <div class="product fade-in">
+            <img src="https://m.media-amazon.com/images/I/5147T7qgfnL._AC_SX466_.jpg" alt="Product">
+            <h3>Faith</h3>
+            <p>$14.99</p>
+            <button class="add-to-cart" data-name="Faith" data-price="14.99">Add to Cart</button>
+        </div>
+    </div>
 </div>
 <footer>
-<p>&copy; 2025 The Chosen Fit. All rights reserved.</p>
+    <p>&copy; 2025 The Chosen Fit. All rights reserved.</p>
 </footer>
+
 <script>
 document.addEventListener('DOMContentLoaded', function () {
-const elements = document.querySelectorAll('.fade-in');
-const observer = new IntersectionObserver((entries, observer) => {
-entries.forEach(entry => {
-if (entry.isIntersecting) {
-entry.target.classList.add('visible');
-observer.unobserve(entry.target);
-}
-});
-}, { threshold: 0.3 });
-elements.forEach(element => observer.observe(element));
+    const elements = document.querySelectorAll('.fade-in');
+    const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.3 });
+    elements.forEach(element => observer.observe(element));
+
+    // Add to cart functionality
+    const addToCartButtons = document.querySelectorAll('.add-to-cart');
+    addToCartButtons.forEach(button => {
+        button.addEventListener('click', function () {
+            const productName = button.getAttribute('data-name');
+            const productPrice = button.getAttribute('data-price');
+            const product = { name: productName, price: productPrice };
+
+            // Get cart from localStorage
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+            // Add the product to the cart
+            cart.push(product);
+
+            // Save the updated cart to localStorage
+            localStorage.setItem('cart', JSON.stringify(cart));
+
+            alert(`${productName} added to your cart.`);
+        });
+    });
 });
 </script>
 </body>
