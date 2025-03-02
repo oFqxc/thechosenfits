@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Payment - The Chosen Fit</title>
+<link rel="stylesheet" href="payment-style.css">
+<style>
+/* Same basic styles as before... */
+</style>
+</head>
+<body>
+<h2>Payment Information</h2>
+
+<div id="product-info">
+    <h3>Your Cart:</h3>
+    <div id="cart-items"></div> <!-- Cart items will be dynamically inserted here -->
+    <p>Total: $<span id="total-price"></span></p>
+</div>
+
+<form id="payment-form">
+    <input type="text" id="full-name" placeholder="Full Name" required>
+    <input type="email" id="email" placeholder="Email Address" required>
+    <input type="text" id="address" placeholder="Shipping Address" required>
+    <input type="number" id="card-number" placeholder="Card Number" required>
+    <input type="text" id="expiry-date" placeholder="MM/YY Expiry" required>
+    <input type="text" id="cvv" placeholder="CVV" required>
+    <button type="submit">Submit Payment</button>
+</form>
+
+<footer>
+    <p>&copy; 2025 The Chosen Fit. All rights reserved.</p>
+</footer>
+
+<script>
+// Retrieve the cart data from sessionStorage
+document.addEventListener('DOMContentLoaded', function () {
+    const cart = JSON.parse(sessionStorage.getItem('cart')) || [];
+    const totalPrice = sessionStorage.getItem('totalPrice');
+    const cartItemsContainer = document.getElementById('cart-items');
+    const totalPriceElement = document.getElementById('total-price');
+
+    if (cart.length === 0) {
+        cartItemsContainer.innerHTML = '<p>Your cart is empty.</p>';
+        totalPriceElement.textContent = '0.00';
+    } else {
+        let itemsHTML = '';
+        cart.forEach(item => {
+            itemsHTML += `<p>${item.name} - $${item.price}</p>`;
+        });
+        cartItemsContainer.innerHTML = itemsHTML;
+        totalPriceElement.textContent = totalPrice;
+    }
+
+    // Handle form submission (for now, simulate the payment)
+    const paymentForm = document.getElementById('payment-form');
+    paymentForm.addEventListener('submit', function (event) {
+        event.preventDefault();
+
+        // Capture payment data
+        const fullName = document.getElementById('full-name').value;
+        const email = document.getElementById('email').value;
+        const address = document.getElementById('address').value;
+        const cardNumber = document.getElementById('card-number').value;
+        const expiryDate = document.getElementById('expiry-date').value;
+        const cvv = document.getElementById('cvv').value;
+
+        alert(`Payment successful!\nTotal: $${totalPrice}\nShipping to: ${address}`);
+
+        // Clear sessionStorage after payment
+        sessionStorage.removeItem('cart');
+        sessionStorage.removeItem('totalPrice');
+    });
+});
+</script>
+</body>
+</html>
